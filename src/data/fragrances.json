@@ -1,0 +1,82 @@
+[
+  {
+    "id": "aura",
+    "name": "NOVAIR AURA",
+    "tagline": "Fresh. Modern. Yours.",
+    "mood": "Fresh, modern, everyday wear",
+    "notes": ["Bergamot", "Mandarin", "Jasmine", "Musk", "Cedar"],
+    "price": 120,
+    "image": "/fragrances/aura.webp",
+    "featured": true
+  },
+  {
+    "id": "noir",
+    "name": "NOVAIR NOIR",
+    "tagline": "Dark, seductive, made for the evening.",
+    "mood": "Dark and seductive",
+    "notes": ["Oud", "Amber", "Vanilla", "Leather", "Musk"],
+    "price": 140,
+    "image": "/fragrances/noir.webp",
+    "featured": false
+  },
+  {
+    "id": "eleve",
+    "name": "NOVAIR ÉLÉVÉ",
+    "tagline": "Clean, elegant, quietly luxurious.",
+    "mood": "Clean and elegant",
+    "notes": ["Bergamot", "Lavender", "Iris", "Cedarwood", "Amber"],
+    "price": 130,
+    "image": "/fragrances/eleve.webp",
+    "featured": false
+  },
+  {
+    "id": "velvet",
+    "name": "NOVAIR VELVET",
+    "tagline": "Smooth, sweet, and rich.",
+    "mood": "Smooth and sweet",
+    "notes": ["Rose", "Vanilla", "Tonka Bean", "Sandalwood", "Musk"],
+    "price": 130,
+    "image": "/fragrances/velvet.webp",
+    "featured": false
+  },
+  {
+    "id": "oud",
+    "name": "NOVAIR OUD",
+    "tagline": "Powerful, warm, Middle Eastern inspired.",
+    "mood": "Rich and powerful",
+    "notes": ["Oud", "Saffron", "Rose", "Amber", "Sandalwood"],
+    "price": 150,
+    "image": "/fragrances/oud.webp",
+    "featured": false
+  },
+  {
+    "id": "imperial",
+    "name": "NOVAIR IMPÉRIAL",
+    "tagline": "The signature scent of confidence.",
+    "mood": "Rich and commanding",
+    "notes": ["Saffron", "Oud", "Ambergris accord", "Patchouli", "Vanilla"],
+    "price": 160,
+    "image": "/fragrances/imperial.webp",
+    "featured": false
+  },
+  {
+    "id": "eclat",
+    "name": "NOVAIR ÉCLAT",
+    "tagline": "Bright and fresh, made for daylight.",
+    "mood": "Bright daytime freshness",
+    "notes": ["Lemon", "Bergamot", "Neroli", "Vetiver", "White Musk"],
+    "price": 120,
+    "image": "/fragrances/eclat.webp",
+    "featured": false
+  },
+  {
+    "id": "after-dark",
+    "name": "NOVAIR AFTER DARK",
+    "tagline": "A night fragrance with an edge.",
+    "mood": "Seductive night wear",
+    "notes": ["Black Pepper", "Plum", "Leather", "Vanilla", "Amber"],
+    "price": 140,
+    "image": "/fragrances/after-dark.webp",
+    "featured": false
+  }
+]
