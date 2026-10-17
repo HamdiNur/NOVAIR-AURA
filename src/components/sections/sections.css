@@ -1,0 +1,72 @@
+.band {
+  padding: clamp(4rem, 10vw, 8rem) var(--gutter);
+  background: var(--paper);
+  position: relative;
+}
+.band--deep { background: var(--paper-deep); }
+
+.band__inner { max-width: 1000px; margin: 0 auto; display: grid; gap: var(--space-6); }
+.band__inner--narrow { max-width: 640px; }
+.band__title { font-size: var(--fs-xl); }
+.band__text { color: var(--ink-soft); max-width: 60ch; }
+.band .eyebrow {
+  letter-spacing: 0.4em;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  color: var(--champagne-deep);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-8);
+  margin: var(--space-4) 0;
+  padding: 0;
+  list-style: none;
+}
+.steps__item { display: grid; gap: var(--space-2); align-content: start; }
+.steps__item h3 { font-size: var(--fs-lg); }
+.steps__item p { color: var(--ink-soft); font-size: var(--fs-sm); }
+.steps__num {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--champagne);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  color: var(--champagne-deep);
+}
+
+/* Buttons and button-like links */
+.btn {
+  justify-self: start;
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover { background: var(--champagne-deep); }
+
+/* Footer */
+.footer { background: var(--ink); color: var(--paper); padding: var(--space-12) var(--gutter) var(--space-8); }
+.footer__inner { max-width: 1000px; margin: 0 auto; display: grid; gap: var(--space-8); }
+.footer__brand { display: flex; align-items: center; gap: var(--space-3); }
+.footer .brand__word { font-family: var(--font-display); font-size: var(--fs-lg); letter-spacing: 0.32em; }
+.footer__links { display: flex; flex-wrap: wrap; gap: var(--space-6); margin: 0; padding: 0; list-style: none; }
+.footer__links a {
+  color: var(--champagne-light);
+  text-decoration: none;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.footer__links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.footer__legal { font-size: var(--fs-xs); color: var(--paper-deep); opacity: 0.7; }
+.footer :focus-visible { outline-color: var(--champagne-light); }
