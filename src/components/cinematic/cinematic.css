@@ -346,19 +346,23 @@
    Must stay at the END of this file so it wins over earlier rules.
    ============================================================ */
    /* ---------- real images (replaces the CSS placeholders) ---------- */
+/* One crop point for ALL layers, so plate, bottle and leaves stay aligned.
+   --focus = where the bottle sits in the image (x y). */
+.world { --focus: 56% 60%; --hero-origin: 56% 55%; }
+
 .layer img.fill {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 60%;
+  object-position: var(--focus);
 }
 
 /* hero and foreground are now full-canvas images, not small shapes */
 .layer--hero {
   display: block;
   padding: 0;
-  transform-origin: 70% 60%; /* roughly where the bottle sits; tune later */
+transform-origin: var(--hero-origin);
 }
 .layer--fg { width: auto; inset: -6%; }
 .layer--fg-left,
@@ -368,6 +372,75 @@
 .world[data-raw="true"] .layer--hero,
 .world[data-raw="true"] .layer--fg {
   mix-blend-mode: multiply;
+}
+.card__cta {
+  margin-top: var(--space-2);
+  justify-self: start;
+  padding: 0.55rem 1.2rem;
+  border: 1px solid var(--champagne-deep);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: background 0.2s;
+}
+.card__cta:hover { background: var(--champagne); }
+
+/* ---------- header legibility ---------- */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -48px 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgba(251, 246, 236, 0.82), rgba(251, 246, 236, 0));
+  pointer-events: none;
+}
+
+/* ---------- mobile pass ---------- */
+@media (max-width: 767px) {
+  .world { --focus: 58% 60%; --hero-origin: 50% 55%; }
+
+  .copy h1 { letter-spacing: 0.12em; }
+
+  .copy--a,
+  .copy--b {
+    left: 50%;
+    right: auto;
+    width: min(34ch, calc(100% - 2 * var(--gutter)));
+    padding: var(--space-6);
+    background: rgba(251, 246, 236, 0.84);
+    border-radius: var(--radius-md);
+    text-align: center;
+  }
+  .copy--a { transform: translate(-50%, calc(-50% + (1 - var(--a)) * 24px)); }
+  .copy--b { transform: translate(-50%, calc(-50% + (1 - var(--b)) * 24px)); }
+
+  .catalog { bottom: max(3%, env(safe-area-inset-bottom)); }
+  .catalog__title { font-size: var(--fs-lg); }
+}
+/* Short landscape phones: keep the hero title from crowding the bottle */
+@media (max-height: 480px) and (orientation: landscape) {
+  .copy--intro { top: 22%; }
+  .copy h1 { font-size: var(--fs-xl); }
+}
+/* ---------- hero text legibility ---------- */
+.copy--intro { color: var(--paper); }
+.copy--intro .eyebrow { color: var(--champagne-light); }
+.copy--intro h1,
+.copy--intro .lede {
+  text-shadow: 0 2px 24px rgba(20, 17, 13, 0.55);
+}
+
+/* Soft dark pool behind the text so it reads on any photo */
+.copy--intro::before {
+  content: "";
+  position: absolute;
+  inset: -25% -35% -25% -25%;
+  z-index: -1;
+  background: radial-gradient(ellipse at 35% 50%, rgba(20, 17, 13, 0.55), transparent 70%);
+  pointer-events: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .cinematic-scroll { height: auto; }
@@ -388,6 +461,7 @@
     overflow: clip;
     filter: none;
     will-change: auto;
+    
   }
   .tint { display: none; }
 
@@ -396,15 +470,10 @@
   /* Narrative panels become ordinary readable sections */
   .copy--a,
   .copy--b {
-    position: relative;
-    inset: auto;
-    max-width: 60ch;
-    margin: 0 auto;
-    padding: var(--space-16) var(--gutter);
-    text-align: left;
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
   }
 
   /* Catalog sits below, fully visible and interactive */
