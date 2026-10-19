@@ -18,9 +18,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NOVAIR Aura | Fresh. Modern. Yours.",
+  metadataBase: new URL("https://novair.example"), // TODO: your real domain
+  title: {
+    default: "NOVAIR Aura | Fresh. Modern. Yours.",
+    template: "%s | NOVAIR",
+  },
   description:
-    "NOVAIR Aura: a fragrance of bergamot, mandarin, jasmine, musk and cedar. Explore the full NOVAIR collection.",
+    "NOVAIR Aura: a fragrance of bergamot, mandarin, jasmine, musk and cedar. Explore the full NOVAIR collection and order on WhatsApp.",
+  openGraph: {
+    title: "NOVAIR Aura | Fresh. Modern. Yours.",
+    description:
+      "Bergamot, mandarin, jasmine, musk and cedar. Explore the NOVAIR collection.",
+    siteName: "NOVAIR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NOVAIR Aura | Fresh. Modern. Yours.",
+    description: "Explore the NOVAIR fragrance collection.",
+  },
 };
 
 export const viewport: Viewport = {
